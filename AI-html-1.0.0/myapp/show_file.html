@@ -1,0 +1,19 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<h2>Uploaded File</h2>
+{% if file_path %}
+    {% if file_path|lower|slice:'-4:' == '.jpg' or file_path|lower|slice:'-5:' == '.jpeg' or file_path|lower|slice:'-4:' == '.png' or file_path|lower|slice:'-4:' == '.gif' %}
+        <img src="{{ file_path }}" alt="Uploaded Image">
+    {% elif file_path|lower|slice:'-4:' == '.mp4' or file_path|lower|slice:'-4:' == '.avi' or file_path|lower|slice:'-4:' == '.mkv' %}
+        <video width="640" height="360" controls>
+            <source src="{{ file_path }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% else %}
+        <p>Uploaded file: <a href="{{ file_path }}" target="_blank">{{ file_path }}</a></p>
+    {% endif %}
+{% else %}
+    <p>No file to display.</p>
+{% endif %}
+{% endblock %}

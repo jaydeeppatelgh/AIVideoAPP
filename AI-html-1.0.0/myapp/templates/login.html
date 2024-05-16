@@ -1,0 +1,101 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+    <!-- Contact Start -->
+    <div class="container-fluid flex py-5">
+        <div class="container max-width">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="margin-top"> Welcome to <span class="c-fyIPNS">AI Video</span></h1>
+                <div class="login-heading">LogIn</div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-7 width-inc">
+                    <p class="text-center mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                    <div class="wow fadeIn" data-wow-delay="0.3s">
+                    {% if msg %}
+                        <p style="color: green;">{{msg}}</p>
+                    {% elif msg1 %}
+                        <p style="color: red;">{{msg1}}</p>
+                    {% else %}
+                        <p style="color: red;"></p>
+                    {% endif %}
+                        <form action="{% url 'login' %}" method="post">
+                            {% csrf_token %}
+                            <div class="row g-3 fl-cl">
+                                <div class="col-md-6 full-width">
+                                    <div class="form-floating custom-form">
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 full-width">
+                                    <div class="form-floating custom-form">
+                                        <input type="Password" name="pswd" class="form-control" id="pswd" placeholder="Your Password">
+                                        <label for="Password">Password</label>
+                                    </div>
+                                </div>
+                               <a href="{% url 'fpswd' %}" class="full-width">Forgot Password?</a>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">logIn</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- login side video part -->
+        <div class="c-PJLV c-fBjWAM">
+            <h1 class="c-PJLV c-bOhtCq">
+                Idea to <span class="c-fyIPNS">Slideshow</span> video
+            </h1>
+            <div class="c-PJLV c-fcUyPF">With AI Video, you can turn any content or idea into video, instantly 🚀</div>
+            <div class="c-PJLV c-fMHNgW">
+                <video poster="https://web-assets.invideo.io/landing-pages/prod/homepage/videos/poster-images/Gen3Promo.jpeg" class="c-cVPNsh"><source src="https://web-assets.invideo.io/landing-pages/prod/homepage/videos/Gen3Promo.mp4">
+                </video>
+                <button type="button" class="c-jzCXtQ" style="display: flex; background: linear-gradient(90deg, #0A6A9D 0%, #10BDDB 100%);border: none;">
+                    <svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px; position: relative; z-index: 50; border-radius: 50%; background-image: linear-gradient(90deg, #0A6A9D 0%, #10BDDB 100%);">
+                        <g filter="url(#filter0)">
+                            <rect width="240" height="240" rx="120" fill="black" fill-opacity="0"></rect>
+                            <path d="M90.3902 68.9124C89.0527 68.1402 87.3809 69.1055 87.3809 70.6499V177.321C87.3809 178.865 89.0527 179.83 90.3902 179.058L182.77 125.723C184.107 124.95 184.107 123.02 182.77 122.248L90.3902 68.9124Z" fill="white">
+                            </path>
+                        </g>
+                        <defs>
+                            <filter id="filter0" x="-160" y="-160" width="560" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                <feGaussianBlur in="BackgroundImageFix" stdDeviation="80"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_784_242613"></feComposite>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_784_242613" result="shape"></feBlend>
+                            </filter>
+                        </defs>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Newsletter Start -->
+    <!-- <div class="container-fluid bg-primary newsletter py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="img/newsletter.png" alt="">
+                </div>
+                <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Newsletter</div>
+                    <h1 class="text-white mb-4">Let's subscribe the newsletter</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">Diam sed sed dolor stet amet eirmod</small>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Newsletter End -->
+
+    {% endblock %}
